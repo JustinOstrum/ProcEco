@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int mapWidth;
+    public int mapHeight;
 
-    // Update is called once per frame
-    void Update()
+    public float noiseScale;
+
+    public TerrainDisplay terrainDisplay;
+    
+    public void GenerateMap()
     {
-        
+        float[,] noiseMap = Noise.GenerateNoiseMap(mapWidth, mapHeight, noiseScale);
+        terrainDisplay.DrawNoiseMap(noiseMap);
     }
 }
