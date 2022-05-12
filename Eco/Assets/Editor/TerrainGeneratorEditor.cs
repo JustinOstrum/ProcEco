@@ -10,7 +10,13 @@ public class TerrainGeneratorEditor : Editor
     {
         TerrainGenerator terrainGenerator = (TerrainGenerator)target;
 
-        DrawDefaultInspector();
+        if (DrawDefaultInspector())
+        {
+            if (terrainGenerator.autoUpdate)
+            {
+                terrainGenerator.GenerateMap();
+            }
+        }
 
         if (GUILayout.Button("Generate"))
         {
