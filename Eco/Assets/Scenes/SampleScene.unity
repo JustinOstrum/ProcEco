@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603e002def82cf34fb1e1a976a6ce61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawMode: 1
   mapWidth: 100
   mapHeight: 100
   noiseScale: 10
@@ -463,7 +464,7 @@ MonoBehaviour:
     colour: {r: 0, g: 0.4916315, b: 0.6509434, a: 0}
   - name: Land
     height: 1
-    colour: {r: 0.3773585, g: 0.19599697, b: 0, a: 0}
+    colour: {r: 0, g: 0.3018868, b: 0.08054352, a: 0}
   terrainDisplay: {fileID: 1214366487}
 --- !u!4 &1214366489
 Transform:
