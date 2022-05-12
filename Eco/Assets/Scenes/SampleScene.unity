@@ -457,6 +457,13 @@ MonoBehaviour:
   seed: 0
   offset: {x: 0, y: 0}
   autoUpdate: 1
+  regions:
+  - name: Water
+    height: 0.4
+    colour: {r: 0, g: 0.4916315, b: 0.6509434, a: 0}
+  - name: Land
+    height: 1
+    colour: {r: 0.3773585, g: 0.19599697, b: 0, a: 0}
   terrainDisplay: {fileID: 1214366487}
 --- !u!4 &1214366489
 Transform:

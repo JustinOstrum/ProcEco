@@ -19,11 +19,16 @@ public class TerrainGenerator : MonoBehaviour
 
     public bool autoUpdate;
 
+    public TerrainType[] regions;
+
     public TerrainDisplay terrainDisplay;
     
     public void GenerateMap()
     {
         float[,] noiseMap = Noise.GenerateNoiseMap(mapWidth, mapHeight, seed, noiseScale, octaves, persistence, lacunarity, offset);
+
+
+
         terrainDisplay.DrawNoiseMap(noiseMap);
     }
 
@@ -48,5 +53,13 @@ public class TerrainGenerator : MonoBehaviour
         {
             octaves = 0;
         }
+    }
+
+    [System.Serializable]
+    public struct TerrainType
+    {
+        public string name;
+        public float height;
+        public Color colour;
     }
 }
