@@ -18,13 +18,13 @@ public class TerrainGeneratorEditor : Editor
         {
             if (terrainGenerator.autoUpdate)
             {
-                terrainGenerator.GenerateMap();
+                terrainGenerator.DrawMapInEditor();
             }
         }
 
         if (GUILayout.Button("Generate"))
         {
-            terrainGenerator.GenerateMap();
+            terrainGenerator.DrawMapInEditor();
         }
     }
 }
