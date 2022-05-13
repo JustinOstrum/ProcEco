@@ -451,20 +451,38 @@ MonoBehaviour:
   drawMode: 1
   mapWidth: 100
   mapHeight: 100
-  noiseScale: 10
+  noiseScale: 25
   octaves: 4
-  persistence: 0
-  lacunarity: 1
+  persistence: 0.25
+  lacunarity: 2
   seed: 0
   offset: {x: 0, y: 0}
   autoUpdate: 1
   regions:
-  - name: Water
+  - name: Deep Water
+    height: 0.3
+    colour: {r: 0, g: 0.34098643, b: 0.4528302, a: 0}
+  - name: Shallow Water
     height: 0.4
-    colour: {r: 0, g: 0.4916315, b: 0.6509434, a: 0}
-  - name: Land
+    colour: {r: 0, g: 0.59672624, b: 0.7924528, a: 0}
+  - name: Sand
+    height: 0.45
+    colour: {r: 1, g: 0.98417395, b: 0.6264151, a: 0}
+  - name: Plains
+    height: 0.55
+    colour: {r: 0.23700443, g: 0.6037736, b: 0.23581344, a: 0}
+  - name: Plains 2
+    height: 0.6
+    colour: {r: 0.15064079, g: 0.3679245, b: 0.15064079, a: 0}
+  - name: Mountain
+    height: 0.7
+    colour: {r: 0.33962262, g: 0.30330208, b: 0.2736205, a: 0}
+  - name: Mountain Top
+    height: 0.9
+    colour: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0}
+  - name: Mountain Peak
     height: 1
-    colour: {r: 0, g: 0.3018868, b: 0.08054352, a: 0}
+    colour: {r: 1, g: 1, b: 1, a: 0}
   terrainDisplay: {fileID: 1214366487}
 --- !u!4 &1214366489
 Transform:
