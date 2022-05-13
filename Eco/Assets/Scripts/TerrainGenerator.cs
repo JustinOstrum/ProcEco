@@ -13,6 +13,8 @@ public class TerrainGenerator : MonoBehaviour
     public enum DrawMode {NoiseMap, ColourMap, Mesh};
     public DrawMode drawMode;
 
+    public Noise.NormalizeMode normalizeMode;
+
     public const int mapChunkSize = 241;
     [Range(0,6)]
     public int editorLevelOfDetail;
@@ -121,7 +123,7 @@ public class TerrainGenerator : MonoBehaviour
 
     MapData GenerateMapData(Vector2 centre)
     {
-        float[,] noiseMap = Noise.GenerateNoiseMap(mapChunkSize, mapChunkSize, seed, noiseScale, octaves, persistence, lacunarity, centre + offset);
+        float[,] noiseMap = Noise.GenerateNoiseMap(mapChunkSize, mapChunkSize, seed, noiseScale, octaves, persistence, lacunarity, centre + offset, normalizeMode);
 
         Color[] colourMap = new Color[mapChunkSize * mapChunkSize];
         for (int y = 0; y < mapChunkSize; y++)
