@@ -133,9 +133,13 @@ public class TerrainGenerator : MonoBehaviour
                 float currentHeight = noiseMap[x, y];
                 for (int i = 0; i < regions.Length; i++)
                 {
-                    if (currentHeight <= regions[i].height)
+                    if (currentHeight >= regions[i].height)
                     {
                         colourMap[y * mapChunkSize + x] = regions[i].colour;
+                    }
+
+                    else
+                    {
                         break;
                     }
                 }
