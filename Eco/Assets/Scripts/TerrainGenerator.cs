@@ -31,6 +31,11 @@ public class TerrainGenerator : MonoBehaviour
 
     public TerrainDisplay terrainDisplay;
 
+    private void Awake()
+    {
+        textureData.UpdateMeshHeights(terrainMaterial, terrainData.MinHeight, terrainData.MaxHeight);
+    }
+
     void OnValuesUpdated()
     {
         if (!Application.isPlaying)
@@ -62,6 +67,8 @@ public class TerrainGenerator : MonoBehaviour
 
     public void DrawMapInEditor()
     {
+        textureData.UpdateMeshHeights(terrainMaterial, terrainData.MinHeight, terrainData.MaxHeight);
+
         MapData mapData = GenerateMapData(Vector2.zero);
 
         if (drawMode == DrawMode.NoiseMap)
@@ -137,7 +144,7 @@ public class TerrainGenerator : MonoBehaviour
                 MapThreadInfo<MeshData> threadInfo = meshDataThreadInfoQueue.Dequeue();
                 threadInfo.callback(threadInfo.parameter);
             }
-        }
+        }        
     }
 
     MapData GenerateMapData(Vector2 centre)
@@ -161,7 +168,7 @@ public class TerrainGenerator : MonoBehaviour
                     }
                 }
             }
-        }
+        }        
 
         return new MapData(noiseMap);
     }

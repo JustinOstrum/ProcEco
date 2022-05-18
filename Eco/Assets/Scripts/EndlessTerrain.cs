@@ -127,7 +127,7 @@ public class EndlessTerrain : MonoBehaviour
                 {
                     collisionLODMesh = lodMeshes[i];
                 }
-            }
+            }           
 
             terrainGenerator.RequestMapData(position, OnMapDataReceived);
         }
