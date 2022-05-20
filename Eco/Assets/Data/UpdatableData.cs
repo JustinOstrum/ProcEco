@@ -24,4 +24,5 @@ public class UpdatableData : ScriptableObject
             OnValuesUpdated();
         }
     }
+    
 }
