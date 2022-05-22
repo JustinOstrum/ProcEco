@@ -26,7 +26,7 @@ public class SimpleNoiseFilter : INoiseFilter
             amplitude *= planetNoiseSettings.persistence;
         }
 
-        noiseValue = Mathf.Max(0, noiseValue - planetNoiseSettings.minValue);
+        noiseValue = noiseValue - planetNoiseSettings.minValue;
         return noiseValue * planetNoiseSettings.strength;
     }
 }
